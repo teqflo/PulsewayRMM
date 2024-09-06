@@ -4,6 +4,11 @@ powershell -Command "& { . 'C:\Scripts\Q-Copilot.ps1'; Set-QCopilotComputer -Win
 
 #Disable Copilot taskbar button for the current user (and specific abbrevation on Windows 10)
 powershell -Command "& { . 'C:\Scripts\Q-Copilot.ps1'; Set-QCopilotUser -WindowsCopilot Disable -CopilotTaskbarButton Disable }"
+
+#Or within the same script just call either (as last line in script/scope)
+Set-QCopilotComputer -WindowsCopilot Disable -CopilotPlusRecall Disable -EdgeCopilot Disable -BingCopilot Disable
+#or
+Set-QCopilotUser -WindowsCopilot Disable -CopilotTaskbarButton Disable
 #>
 
 # Helper function to set registry value only if it's different from the desired value
